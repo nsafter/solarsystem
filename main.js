@@ -2,19 +2,19 @@ import * as THREE from "three";
 import { OrbitControls } from "https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/OrbitControls.js";
 import "./style.css";
 
-// import starsTexture from '../img/stars.jpg';
-import sunTexture from "./sun.jpg";
-import mercuryTexture from "./mercury.jpg";
-import venusTexture from "./venus.jpg";
-import earthTexture from "./earth.jpg";
-import marsTexture from "./mars.jpg";
-import jupiterTexture from "./jupiter.jpg";
-import saturnTexture from "./saturn.jpg";
-import saturnRingTexture from "./saturn ring.png";
-import uranusTexture from "./uranus.jpg";
-import uranusRingTexture from "./uranus ring.png";
-import neptuneTexture from "./neptune.jpg";
-import plutoTexture from "./pluto.jpg";
+import starsTexture from "./images/stars.jpg";
+import sunTexture from "./images/sun.jpg";
+import mercuryTexture from "./images/mercury.jpg";
+import venusTexture from "./images/venus.jpg";
+import earthTexture from "./images/earth.jpg";
+import marsTexture from "./images/mars.jpg";
+import jupiterTexture from "./images/jupiter.jpg";
+import saturnTexture from "./images/saturn.jpg";
+import saturnRingTexture from "./images/saturn ring.png";
+import uranusTexture from "./images/uranus.jpg";
+import uranusRingTexture from "./images/uranus ring.png";
+import neptuneTexture from "./images/neptune.jpg";
+import plutoTexture from "./images/pluto.jpg";
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg"),
@@ -57,6 +57,9 @@ function addStar() {
 Array(1000).fill().forEach(addStar);
 
 const textureLoader = new THREE.TextureLoader();
+scene.background = textureLoader.load({
+  starsTexture,
+});
 
 const sunGeo = new THREE.SphereGeometry(16, 30, 30);
 const sunMat = new THREE.MeshBasicMaterial({
