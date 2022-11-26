@@ -2,7 +2,6 @@ import * as THREE from "three";
 import { OrbitControls } from "https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/OrbitControls.js";
 import "./style.css";
 
-import starsTexture from "./images/stars.jpg";
 import sunTexture from "./images/sun.jpg";
 import mercuryTexture from "./images/mercury.jpg";
 import venusTexture from "./images/venus.jpg";
@@ -57,9 +56,6 @@ function addStar() {
 Array(1000).fill().forEach(addStar);
 
 const textureLoader = new THREE.TextureLoader();
-scene.background = textureLoader.load({
-  starsTexture,
-});
 
 const sunGeo = new THREE.SphereGeometry(16, 30, 30);
 const sunMat = new THREE.MeshBasicMaterial({
